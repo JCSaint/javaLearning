@@ -1,14 +1,15 @@
 package introJavaPOO;
 
-public class Livro {
+public abstract class Livro implements Produto {
 	private String nome;
 	private String descricao;
 	private double valor;
 	private String isbn;
 	private Autor autor;
-	
-	Livro(Autor autor){
+
+	public Livro(Autor autor) {
 		this.autor = autor;
+		this.isbn = "00000000000";
 	}
 
 	void adicionaValor(double valor) {
@@ -55,19 +56,13 @@ public class Livro {
 		this.autor = autor;
 	}
 
-	double retornaValor() {
+	public double retornaValor() {
 		return valor;
 	}
 
-	boolean aplicaDescontoDe(double porcentagem) {
-		if (porcentagem > .3) {
-			return false;
-		}
-		this.valor -= valor * porcentagem;
-		return true;
-	}
+	public abstract boolean aplicaDescontoDe(double porcentagem);
 
-	void mostrarDetalhes() {
+	public void mostrarDetalhes() {
 		System.out.println("Detalhes do livro");
 		System.out.println("Nome: " + nome);
 		System.out.println("Descrição: " + descricao);
@@ -75,12 +70,10 @@ public class Livro {
 		System.out.println("ISBN: " + isbn);
 		System.out.println("--");
 
-		if (temAutor()) {
-			autor.mostrarDetalhes();
-		}
+		autor.mostrarDetalhes();
 	}
 
-	boolean temAutor() {
+	public boolean temAutor() {
 		return this.autor != null;
 	}
 
