@@ -1,4 +1,7 @@
-package introJavaPOO;
+package produtos;
+
+import livraria.Autor;
+import livraria.exception.AutorNuloException;
 
 public abstract class Livro implements Produto {
 	private String nome;
@@ -6,8 +9,17 @@ public abstract class Livro implements Produto {
 	private double valor;
 	private String isbn;
 	private Autor autor;
+	
+	@Override
+	public String toString() {
+		return "Nome: " + nome +" - " + "Descrição: " + descricao + "\n";
+	}
 
 	public Livro(Autor autor) {
+		if (autor == null) {
+			throw new AutorNuloException("O autor do Livro não pode ser nulo");
+		}
+
 		this.autor = autor;
 		this.isbn = "00000000000";
 	}

@@ -1,4 +1,11 @@
-package introJavaPOO;
+package loja;
+
+import livraria.Autor;
+import livraria.Editora;
+import produtos.Ebook;
+import produtos.Livro;
+import produtos.LivroFisico;
+import produtos.Revista;
 
 public class LojaDeLivros {
 

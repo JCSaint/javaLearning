@@ -1,6 +1,8 @@
-package introJavaPOO;
+package produtos;
 
-public class LivroFisico extends Livro {
+import livraria.Autor;
+
+public class LivroFisico extends Livro implements Promocional, Produto {
 
 	public LivroFisico(Autor autor) {
 		super(autor);

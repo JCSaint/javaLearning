@@ -1,4 +1,6 @@
-package introJavaPOO;
+package produtos;
+
+import livraria.Autor;
 
 public class MiniLivro extends Livro {
 

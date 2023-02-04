@@ -1,6 +1,8 @@
-package introJavaPOO;
+package produtos;
 
-public class Ebook extends Livro {
+import livraria.Autor;
+
+public class Ebook extends Livro implements Promocional, Produto {
 	private String waterMark;
 
 	public Ebook(Autor autor) {

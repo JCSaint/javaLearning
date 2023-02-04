@@ -1,10 +1,17 @@
-package introJavaPOO;
+package produtos;
 
-public class Revista implements Produto{
+import livraria.Editora;
+
+public class Revista implements Produto, Promocional {
 	private String nome;
 	private String descricao;
 	private double valor;
 	private Editora editora;
+	
+	@Override
+	public String toString() {
+		return "Nome: " + nome +" - " + "Descrição: " + descricao + "\n";
+	}
 
 	public String getNome() {
 		return nome;

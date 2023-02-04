@@ -1,11 +1,21 @@
-package introJavaPOO;
+package livraria;
 
 public class Autor {
 	private String nome;
 	private String email;
 	private String cpf;
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Autor)) {
+			return false;
+		}
+		
+		Autor outro = (Autor) obj;
+		return this.nome.equals(outro.getNome());
+	}
 
-	void mostrarDetalhes() {
+	public void mostrarDetalhes() {
 		System.out.println("Detalhes do autor");
 		System.out.println("Nome: " + nome);
 		System.out.println("Email: " + email);
