@@ -47,7 +47,11 @@ public class LojaDeLivros {
 		carrinhoDeCompras.adiciona(livro);
 		carrinhoDeCompras.adiciona(ebook);
 		carrinhoDeCompras.adiciona(revista);
-		System.out.println(carrinhoDeCompras.getTotal());
+		carrinhoDeCompras.imprimeCarrinho();
+		
+		ConsultaDeDescontos consultaDeDescontos = new ConsultaDeDescontos();
+		
+		consultaDeDescontos.consultar("CUPOM100");
 	}
 
 }

@@ -1,5 +1,5 @@
 package produtos;
 
-public interface Produto {
+public interface Produto extends Comparable<Produto> {
 	public abstract double getValor();
 }

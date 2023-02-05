@@ -14,6 +14,19 @@ public abstract class Livro implements Produto {
 	public String toString() {
 		return "Nome: " + nome +" - " + "Descrição: " + descricao + "\n";
 	}
+	
+	@Override
+	public int compareTo(Produto outro) {
+		if(this.getValor() < outro.getValor()) {
+			return -1;
+		}
+		
+		if(this.getValor() > outro.getValor()) {
+			return 1;
+		}
+		
+		return 0;
+	}
 
 	public Livro(Autor autor) {
 		if (autor == null) {
