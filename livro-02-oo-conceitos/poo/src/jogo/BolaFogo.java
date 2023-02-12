@@ -1,4 +1,4 @@
-package poo;
+package jogo;
 
 public class BolaFogo {
 
